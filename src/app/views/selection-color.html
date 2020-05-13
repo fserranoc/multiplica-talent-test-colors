@@ -39,10 +39,13 @@
     <div class="container">
       <ul class="pager">
         <li class="previous" >
-          <a [routerLink]="['/colores', prev_page]"> &laquo; Anterior </a>
+          <a  (click)="getColors(prev_page)"> &laquo; Anterior </a>
+        </li>
+        <li>
+          <span>{{actualPage}} / {{totalPages}}</span>
         </li>
         <li class="next" >
-          <a [routerLink]="['/colores', next_page]" > Siguiente &raquo;</a>
+          <a (click)="getColors(next_page)" > Siguiente &raquo;</a>
         </li>
       </ul>
         

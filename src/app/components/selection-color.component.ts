@@ -19,6 +19,8 @@ export class SelectionColorComponent implements OnInit{
     public colors: Color[];
     public next_page;
     public prev_page;
+    public actualPage:0;
+    public totalPages:0
 
 	constructor(
         private _colorService: ColorService,
@@ -34,12 +36,7 @@ export class SelectionColorComponent implements OnInit{
     }
 
 
-    getColors(){
- 
-
-        this._route.params.subscribe((params) => {
-        
-            let page = +params['page'];
+    getColors(page = 1){
             
             if(!page || page === 0){
                 page = 1;
@@ -68,7 +65,8 @@ export class SelectionColorComponent implements OnInit{
 
                         this.next_page = response.page < response.total_pages ? this.next_page : response.total_pages; 
 
-                        console.log('colores',this.data)
+                        this.actualPage = response.page;
+                        this.totalPages = response.total_pages;
                     }                    
                 },
                 error => {
@@ -81,8 +79,6 @@ export class SelectionColorComponent implements OnInit{
                 }
                 
             )
-
-        });
     }
 
     onCopyBoard(item){

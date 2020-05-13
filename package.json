@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
-    "build": "ng build",
+    "start": "NODE_PATH=./dist node ./dist/index.js",
+    "build": "tsc",
+	"dev":"NODE_PATH=./ ts-node ./src/index.ts",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod"
+	"prod": "npm run build && npm run start"
   },
   "private": true,
   "dependencies": {

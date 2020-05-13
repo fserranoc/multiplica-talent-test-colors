@@ -16,6 +16,6 @@ import { SelectionColorComponent } from './components/selection-color.component'
     routing
   ],
   providers: [appRoutingProviders],
-  bootstrap: [AppComponent]
+  bootstrap: [SelectionColorComponent]
 })
 export class AppModule { }

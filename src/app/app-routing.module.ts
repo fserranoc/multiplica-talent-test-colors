@@ -7,9 +7,10 @@ import { SelectionColorComponent } from './components/selection-color.component'
 
 
 const appRoutes: Routes = [
-  {path: 'colores/:page', component: SelectionColorComponent},
-	{path: '', redirectTo:'/colores/', pathMatch: 'full' }
-  
+  //{path: 'colores/:page', component: SelectionColorComponent},
+  //{path: '', redirectTo:'/colores/', pathMatch: 'full' },
+  {path: '', component: SelectionColorComponent}  ,
+  {path: '**', component: SelectionColorComponent} 
 ];
 
 export const appRoutingProviders: any[] = [];
