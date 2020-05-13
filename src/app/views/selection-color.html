@@ -1,0 +1,51 @@
+<header  style="background-color: #EF540E;">
+  <nav class="navbar">
+    <a class="navbar-brand" href="https://talent.multiplica.com/">Multiplicatalent</a>
+  </nav>
+</header>
+
+  
+
+<div class="container">   
+  <div class="row center-xs center-sm center-lg title" [ngStyle]="{'color': titleColor}">
+    <h3>{{title}}</h3>    
+    <img class="hidden-xs" src="../assets/images/mancha.png" width="10%" height="auto">
+  </div>  
+
+    <div class="row center-xs" >    
+      <div *ngFor="let item of colors" class="col-xs-5 col-sm-3 color-item" [ngStyle]="{'background-color': item.color}" 
+            (click)="onCopyBoard(item)">
+
+        <div class="message-box hidden" id="messagebox_{{item.pantone_value}}"></div>    
+        <div class="info-box" id="infobox_{{item.pantone_value}}">
+          <div class="row start-xs middle-xs">
+            {{item.year}}
+          </div>
+          <div class="middle-xs" >
+            <div class="row center-xs middle-xs">
+              {{item.name}}          
+            </div>
+            <div class="row center-xs middle-xs">
+              {{item.color}}
+            </div>
+          </div>
+          <div class="row end-xs middle-xs">
+            {{item.pantone_value}}
+          </div>        
+        </div>
+        
+      </div>    
+    </div>
+    <div class="container">
+      <ul class="pager">
+        <li class="previous" >
+          <a [routerLink]="['/colores', prev_page]"> &laquo; Anterior </a>
+        </li>
+        <li class="next" >
+          <a [routerLink]="['/colores', next_page]" > Siguiente &raquo;</a>
+        </li>
+      </ul>
+        
+    </div>   
+    
+</div>
